@@ -1,0 +1,30 @@
+[
+  {
+    "id": "71da8c10-5c5e-4645-bae0-14d6ed3269f0",
+    "name": "Media Punta Turquesa",
+    "price": 55000,
+    "stock": 1,
+    "active": true
+  },
+  {
+    "id": "b0bd22dc-fbc3-41d7-9560-465f94f2f6d8",
+    "name": "Media Punta Negra",
+    "price": 50000,
+    "stock": 3,
+    "active": true
+  },
+  {
+    "id": "311dff00-8fd8-479a-b0c7-f1ab430bd2f3",
+    "name": "Media Punta Blanca",
+    "price": 50000,
+    "stock": 15,
+    "active": true
+  },
+  {
+    "id": "1e900748-e8dc-4490-9405-b7a78fb3d330",
+    "name": "Mallot clásico",
+    "price": 80000,
+    "stock": 34,
+    "active": true
+  }
+]

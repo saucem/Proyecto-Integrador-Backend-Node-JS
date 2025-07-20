@@ -1,25 +1,30 @@
 // services
-// import ... from '../models/products.model.js'
+import * as productModel from '../models/products.model.js'
 
 //Persistencia temporal en memoria 
 const products = [];
 
 //
 
-const getAll = () => {
-  return products;
+//const getAll = () => {
+//  return products;
+//};
+
+const getAllProducts = () => {
+  return productModel.getAllProducts();
 };
 
-const create = (product) => {
-  const newProduct = {
-    id: crypto.randomUUID(),
-    name: product.name,
-    price: product.price,
-    stock: product.stock || 0,
-    active: product.active || true
-  };
-  products.push(newProduct);
-  return newProduct;
+const getProductById = async (id) => {
+  return productModel.getProductById(id);
+}
+
+const createProduct = async (productData) => {
+  const { name, price, stock, active} = productData;
+  return await productModel.saveProduct(name, price, stock, active);
 };
 
-export default { getAll, create };
+const deleteProduct = async (id) => {
+  return await productModel.deleteProduct(id);
+}
+
+export default { getAllProducts, getProductById, createProduct, deleteProduct };

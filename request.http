@@ -1,7 +1,10 @@
 GET http://localhost:5000/api/users
 ###
 
-get http://localhost:5000/api/products
+GET http://localhost:5000/api/products
+###
+
+GET http://localhost:5000/api/products/191150c3-9409-4430-b356-f0a5c40367bf
 ###
 
 POST  http://localhost:5000/api/users HTTP/1.1
@@ -19,8 +22,13 @@ Content-Type: application/json
 //importante: dejar un espacio en blanco entre la cabecera y el body
 
 {
-  "name": "Media Punta",
-  "price": 50000,
-  "stock": 25,
+  "name": "Mallot clásico",
+  "price": 80000,
+  "stock": 34,
   "active": true
 }
+
+###
+
+DELETE http://localhost:5000/api/products/a3073a69-089f-4921-8bf3-494683d7f57d
+###
