@@ -1,6 +1,8 @@
 import express from "express";
 import { join, __dirname } from "./utils/index.js";
-import userRoutes from "./routes/users.routes.js";
+import usersRoutes from "./routes/users.routes.js";
+import productsRoutes from "./routes/products.routes.js";
+
 //settings
 const app = express();
 app.set("PORT", 5000);
@@ -11,7 +13,8 @@ app.use(express.static(join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
 //routes
-app.use("/api/users", userRoutes);
+app.use("/api/users", usersRoutes);
+app.use("/api/products", productsRoutes);
 
 //listeners
 app.listen(app.get("PORT"), () => {
