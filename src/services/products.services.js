@@ -1,30 +1,32 @@
 // services
 import * as productModel from '../models/products.model.js'
 
-//Persistencia temporal en memoria 
-const products = [];
-
-//
-
-//const getAll = () => {
-//  return products;
-//};
-
 const getAllProducts = () => {
   return productModel.getAllProducts();
 };
 
 const getProductById = async (id) => {
-  return productModel.getProductById(id);
-}
+  try {
+    return await productModel.getProductById(id);  
+  } catch (error) {
+    throw new Error("Error interno del servidor", error.message);
+  };
+};
 
 const createProduct = async (productData) => {
-  const { name, price, stock, active} = productData;
-  return await productModel.saveProduct(name, price, stock, active);
+  try {
+    return await productModel.saveProduct(productData);  
+  } catch (error) {
+    throw new Error("Error interno del servidor", error.message);
+  };
 };
 
 const deleteProduct = async (id) => {
-  return await productModel.deleteProduct(id);
-}
+  try {
+    return await productModel.deleteProduct(id);  
+  } catch (error) {
+    throw new Error("Error interno del servidor", error.message);
+  };
+};
 
 export default { getAllProducts, getProductById, createProduct, deleteProduct };

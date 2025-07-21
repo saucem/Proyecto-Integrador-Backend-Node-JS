@@ -1,24 +1,32 @@
 // services
-// import ... from '../models/user.model.js'
+import * as userModel from '../models/users.model.js'
 
-//Persistencia temporal en memoria 
-const users = [];
-
-//
-
-const getAll = () => {
-  return users;
+const getAllUsers = () => {
+  return userModel.getAllUsers();
 };
 
-const create = (user) => {
-  const newUser = {
-    id: crypto.randomUUID(),
-    name: user.name,
-    email: user.email
+const getUserById = async (id) => {
+  try {
+    return await userModel.getUserById(id);
+  } catch (error) {
+    throw new Error("Error interno del servidor", error.message);
   };
-  users.push(newUser);
-  return newUser;
 };
 
+const createUser = async (userData) => {
+  try {
+    return await userModel.saveUser(userData);
+  } catch (error) {
+    throw new Error("Error interno del servidor", error.message);
+  };
+};
 
-export default { getAll, create };
+const deleteUser = async (id) => {
+  try {
+    return await userModel.deleteUser(id);
+  } catch (error) {
+    throw new Error("Error interno del servidor", error.message);
+  };
+};
+
+export default { getAllUsers, getUserById, createUser, deleteUser };
