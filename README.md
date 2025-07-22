@@ -350,3 +350,11 @@ Elimina un elemento de la colección de **usuarios** de acuerdo al ID que se le 
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|Inline|
 |404|[NOT_FOUND](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|Inline|
+
+<br>
+
+# Postman &nbsp;<img src="https://iconape.com/wp-content/png_logo_vector/postman.png" alt="Postman logo" width="48" height="auto">
+
+En el siguiente vínculo se puede acceder a la descarga de la colección de verbos generada por Postman para conformar un entorno de prueba de la API. Una vez descargado puede importarse desde el apartado "Colecciones" de Postman.
+
+https://github.com/saucem/Proyecto-Integrador-Backend-Node-JS/blob/main/API-Rest.postman_collection
