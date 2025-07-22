@@ -1,12 +1,36 @@
-# Proyecto final: API Rest
+# Proyecto final Backend Node JS
 
-Conjunto de peticiones que conforman el modo de acceder a la información de la base de datos a través de la API propuesta.
+Desarrollo de una API REST utilizando Node JS y Express para gestionar una base de datos de productos, propuesto como consigna final del curso de Backend con Node JS de la plataforma Talento Tech. La persistencia de datos se logra a través de la conexión con una base de datos NoSQL alojada en el servicio Firebase de la plataforma Firestore.
 
-Base URL: **http://localhost:5000**
+## Tecnologías aplicadas:
+
+### <img src="https://th.bing.com/th/id/ODF.frqWidIBqaJxUeRehgMjAQ?w=32&h=32&qlt=90&pcl=fffffc&o=6&pid=1.2" alt="Node JS logo" width="32" height="auto"> &nbsp; Node JS
+### <img src="https://www.pngfind.com/pngs/m/136-1363736_express-js-icon-png-transparent-png.png" alt="Express logo" width="32" height="auto"> &nbsp; Express
+### <img src="https://th.bing.com/th/id/OSK.I9LOMH2e_O17LkHZuDXE9exuQzwziHeMBf3010VuwUk?w=46&h=46&c=11&rs=1&qlt=80&o=6&dpr=2&pid=SANGAM" alt="Javascript logo" width="32" height="auto"> &nbsp; Javascript
+### <img src="https://firebase.google.com/static/images/brand-guidelines/logo-logomark.png?hl=es-419" alt="Firebase logo" width="32" height="auto"> &nbsp; Firebase
+
+<br>
+
+## Configuración básica:
+
+#### Base URL:
+
+> http://localhost:5000
+
+#### Variables de entorno:
+
+> APIKEY = Your web app's Firebase apikey  
+> AUTHDOMAIN = Your web app's Firebase authdomain  
+> PROJECTID = Your web app's Firebase projectid  
+> STORAGEBUCKET = Your web app's Firebase storagebucket  
+> MESSAGINGSENDERID = Your web app's Firebase messagingsenderid  
+> APPID = Your web app's Firebase appid  
 
 <br>
 
 # Productos
+
+Listado de verbos para interactuar con la colección **Products** de la base de datos. 
 
 ## Get All Products
 
@@ -14,7 +38,7 @@ GET http://localhost:5000/api/products
 
 Recupera **todos** los elementos de la colección de **productos**.
 
-> Response Examples
+#### Ejemplo de respuesta
 
 > 200 Response
 
@@ -65,7 +89,7 @@ POST http://localhost:5000/api/products
 
 Crea un nuevo elemento en la colección de **productos** con la información provista en formato **JSON** de acuerdo a la estructura indicada debajo.
 
-> Body Parameters
+#### Ejemplo del parámetro Body
 
 ```json
 {
@@ -76,7 +100,7 @@ Crea un nuevo elemento en la colección de **productos** con la información pro
 }
 ```
 
-### Params
+### Parámetros
 
 |Name|Location|Type|Required|Description|
 |---|---|---|---|---|
@@ -86,7 +110,7 @@ Crea un nuevo elemento en la colección de **productos** con la información pro
 |» stock|body|integer| yes |none|
 |» active|body|boolean| yes |none|
 
-> Response Examples
+#### Ejemplo de respuesta
 
 > 201 Response
 
@@ -108,7 +132,7 @@ GET http://localhost:5000/api/products/857CPidjDVoPvl16rvcR
 
 Recupera **un** elemento de la colección de **productos** de acuerdo al ID que se le pase por parámetro. Si no encuentra productos con dicho ID, devuelve un mensaje de recurso no encontrado.
 
-> Response Examples
+#### Ejemplos de respuesta
 
 > 200 Response
 
@@ -143,7 +167,7 @@ DELETE http://localhost:5000/api/products/:id
 
 Elimina un elemento de la colección de **productos** de acuerdo al ID que se le pase por parámetro. Si no encuentra productos con dicho ID, devuelve un mensaje de recurso no encontrado.
 
-> Response Examples
+#### Ejemplos de respuesta
 
 > 200 Response
 
@@ -172,13 +196,15 @@ Elimina un elemento de la colección de **productos** de acuerdo al ID que se le
 
 # Usuarios
 
+Listado de verbos para interactuar con la colección **Users** de la base de datos.
+
 ## Get All Users
 
 GET http://localhost:5000/api/users
 
 Recupera **todos** los elementos de la colección de **usuarios**.
 
-> Response Examples
+#### Ejemplo de respuesta
 
 > 200 Response
 
@@ -225,7 +251,7 @@ POST http://localhost:5000/api/users
 
 Crea un nuevo elemento en la colección de **usuarios** con la información provista en formato **JSON** de acuerdo a la estructura indicada debajo.
 
-> Body Parameters
+#### Ejemplo del parámetro Body
 
 ```json
 {
@@ -235,7 +261,7 @@ Crea un nuevo elemento en la colección de **usuarios** con la información prov
 }
 ```
 
-### Params
+### Parámetros
 
 |Name|Location|Type|Required|Description|
 |---|---|---|---|---|
@@ -244,7 +270,7 @@ Crea un nuevo elemento en la colección de **usuarios** con la información prov
 |» email|body|string| yes |none|
 |» role|body|string| yes |none|
 
-> Response Examples
+#### Ejemplo de respuesta
 
 > 201 Response
 
@@ -266,7 +292,7 @@ GET http://localhost:5000/api/users/Zb0H2lzbjCHLTmpzxHCu
 
 Recupera **un** elemento de la colección de **usuarios** de acuerdo al ID que se le pase por parámetro. Si no encuentra productos con dicho ID, devuelve un mensaje de recurso no encontrado.
 
-> Response Examples
+#### Ejemplo de respuesta
 
 > 200 Response
 
@@ -293,7 +319,7 @@ DELETE http://localhost:5000/api/users/:id
 
 Elimina un elemento de la colección de **usuarios** de acuerdo al ID que se le pase por parámetro. Si no encuentra productos con dicho ID, devuelve un mensaje de recurso no encontrado.
 
-> Response Examples
+#### Ejemplos de respuesta 
 
 > 200 Response
 
