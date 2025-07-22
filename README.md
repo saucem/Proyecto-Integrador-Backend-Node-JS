@@ -104,7 +104,7 @@ Crea un nuevo elemento en la colección de **productos** con la información pro
 
 |Name|Location|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|object| no |none|
+|» id|-|string| no |auto|
 |» name|body|string| yes |none|
 |» price|body|float| yes |none|
 |» stock|body|integer| yes |none|
@@ -265,7 +265,7 @@ Crea un nuevo elemento en la colección de **usuarios** con la información prov
 
 |Name|Location|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|object| no |none|
+|» id|-|string| no |auto|
 |» name|body|string| yes |none|
 |» email|body|string| yes |none|
 |» role|body|string| yes |none|
