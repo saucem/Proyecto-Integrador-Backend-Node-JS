@@ -7,7 +7,7 @@ Desarrollo de una API REST utilizando Node JS y Express para gestionar una base 
 ### <img src="https://th.bing.com/th/id/ODF.frqWidIBqaJxUeRehgMjAQ?w=32&h=32&qlt=90&pcl=fffffc&o=6&pid=1.2" alt="Node JS logo" width="32" height="auto"> &nbsp; Node JS
 ### <img src="https://www.pngfind.com/pngs/m/136-1363736_express-js-icon-png-transparent-png.png" alt="Express logo" width="32" height="auto"> &nbsp; Express
 ### <img src="https://th.bing.com/th/id/OSK.I9LOMH2e_O17LkHZuDXE9exuQzwziHeMBf3010VuwUk?w=46&h=46&c=11&rs=1&qlt=80&o=6&dpr=2&pid=SANGAM" alt="Javascript logo" width="32" height="auto"> &nbsp; Javascript
-### <img src="https://firebase.google.com/static/images/brand-guidelines/logo-logomark.png?hl=es-419" alt="Firebase logo" width="32" height="auto"> &nbsp; Firebase
+### <img src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-logomark.png" alt="Firebase logo" width="32" height="auto"> &nbsp; Firebase
 
 <br>
 
