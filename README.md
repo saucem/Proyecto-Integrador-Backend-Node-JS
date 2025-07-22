@@ -128,13 +128,13 @@ Crea un nuevo elemento en la colección de **productos** con la información pro
 
 ## Get Product by ID
 
-GET http://localhost:5000/api/products/857CPidjDVoPvl16rvcR
+GET http://localhost:5000/api/products/:ID
 
 Recupera **un** elemento de la colección de **productos** de acuerdo al ID que se le pase por parámetro. Si no encuentra productos con dicho ID, devuelve un mensaje de recurso no encontrado.
 
 #### Ejemplos de respuesta
 
-> 200 Response
+> 200 Response (GET http://localhost:5000/api/products/857CPidjDVoPvl16rvcR)
 
 ```json
 {
@@ -144,7 +144,7 @@ Recupera **un** elemento de la colección de **productos** de acuerdo al ID que 
     "active": true
 }
 ```
-> 404 Response
+> 404 Response (GET http://localhost:5000/api/products/1234)
 
 ```json
 {
@@ -163,20 +163,20 @@ Recupera **un** elemento de la colección de **productos** de acuerdo al ID que 
 
 ## Delete Product
 
-DELETE http://localhost:5000/api/products/:id
+DELETE http://localhost:5000/api/products/:ID
 
 Elimina un elemento de la colección de **productos** de acuerdo al ID que se le pase por parámetro. Si no encuentra productos con dicho ID, devuelve un mensaje de recurso no encontrado.
 
 #### Ejemplos de respuesta
 
-> 200 Response
+> 200 Response (DELETE http://localhost:5000/api/products/857CPidjDVoPvl16rvcR)
 
 ```json
 {
   {"message": "Producto eliminado"}
 }
 ```
-> 404 Response
+> 404 Response (DELETE http://localhost:5000/api/products/1234)
 
 ```json
 {
@@ -288,13 +288,13 @@ Crea un nuevo elemento en la colección de **usuarios** con la información prov
 
 ## Get User by ID
 
-GET http://localhost:5000/api/users/Zb0H2lzbjCHLTmpzxHCu
+GET http://localhost:5000/api/users/:ID
 
 Recupera **un** elemento de la colección de **usuarios** de acuerdo al ID que se le pase por parámetro. Si no encuentra productos con dicho ID, devuelve un mensaje de recurso no encontrado.
 
 #### Ejemplo de respuesta
 
-> 200 Response
+> 200 Response (GET http://localhost:5000/api/users/Zb0H2lzbjCHLTmpzxHCu)
 
 ```json
 {
@@ -303,6 +303,15 @@ Recupera **un** elemento de la colección de **usuarios** de acuerdo al ID que s
     "role": "admin"
 }
 ```
+
+> 404 Response (GET http://localhost:5000/api/users/1234)
+
+```json
+{
+  {"message": "Usuario no encontrado"}
+}
+```
+
 
 ### Responses
 
@@ -313,7 +322,7 @@ Recupera **un** elemento de la colección de **usuarios** de acuerdo al ID que s
 
 <br>
 
-## DELETE Delete User
+## Delete User
 
 DELETE http://localhost:5000/api/users/:id
 
@@ -321,14 +330,14 @@ Elimina un elemento de la colección de **usuarios** de acuerdo al ID que se le 
 
 #### Ejemplos de respuesta 
 
-> 200 Response
+> 200 Response (DELETE http://localhost:5000/api/users/Zb0H2lzbjCHLTmpzxHCu)
 
 ```json
 {
   {"message": "Usuario eliminado"}
 }
 ```
-> 404 Response
+> 404 Response (DELETE http://localhost:5000/api/users/1234)
 
 ```json
 {
