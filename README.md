@@ -1,37 +1,16 @@
----
-title: "Proyecto final: API Rest"
-language_tabs:
-  - shell: Shell
-  - http: HTTP
-  - javascript: JavaScript
-  - ruby: Ruby
-  - python: Python
-  - php: PHP
-  - java: Java
-  - go: Go
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: "@tarslib/widdershins v4.0.30"
-
----
-
 # Proyecto final: API Rest
 
 Conjunto de peticiones que conforman el modo de acceder a la información de la base de datos a través de la API propuesta.
 
-Base URLs:
+Base URL: **http://localhost:5000**
 
-# Authentication
+<br>
 
-# Raíz
+# Productos
 
-## GET Get All Products
+## Get All Products
 
-GET /api/products
+GET http://localhost:5000/api/products
 
 Recupera **todos** los elementos de la colección de **productos**.
 
@@ -40,7 +19,36 @@ Recupera **todos** los elementos de la colección de **productos**.
 > 200 Response
 
 ```json
-{}
+[
+    {
+        "id": "4MUFAlaPqXaBpNHYouBp",
+        "price": 38500,
+        "active": true,
+        "name": "Pollerín de ensayo",
+        "stock": 28
+    },
+    {
+        "id": "7GhdUUplphGhkwkyIW2a",
+        "price": 80000,
+        "stock": 34,
+        "name": "Mallot clásico",
+        "active": true
+    },
+    {
+        "id": "857CPidjDVoPvl16rvcR",
+        "price": 45000,
+        "name": "Media punta infantil",
+        "stock": 12,
+        "active": true
+    },
+    {
+        "id": "LcZq4t52vxu8ttsKlYYi",
+        "stock": 37,
+        "price": 75000,
+        "active": true,
+        "name": "Media punta adultos"
+    }
+]
 ```
 
 ### Responses
@@ -49,11 +57,11 @@ Recupera **todos** los elementos de la colección de **productos**.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|Inline|
 
-### Responses Data Schema
+<br>
 
-## POST Create Product
+## Create Product
 
-POST /api/products
+POST http://localhost:5000/api/products
 
 Crea un nuevo elemento en la colección de **productos** con la información provista en formato **JSON** de acuerdo a la estructura indicada debajo.
 
@@ -74,13 +82,13 @@ Crea un nuevo elemento en la colección de **productos** con la información pro
 |---|---|---|---|---|
 |body|body|object| no |none|
 |» name|body|string| yes |none|
-|» price|body|integer| yes |none|
+|» price|body|float| yes |none|
 |» stock|body|integer| yes |none|
 |» active|body|boolean| yes |none|
 
 > Response Examples
 
-> 200 Response
+> 201 Response
 
 ```json
 {}
@@ -90,13 +98,13 @@ Crea un nuevo elemento en la colección de **productos** con la información pro
 
 |HTTP Status Code |Meaning|Description|Data schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|Inline|
+|201|[CREATED](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|Inline|
 
-### Responses Data Schema
+<br>
 
-## GET Get Product by ID
+## Get Product by ID
 
-GET /api/products/857CPidjDVoPvl16rvcR
+GET http://localhost:5000/api/products/857CPidjDVoPvl16rvcR
 
 Recupera **un** elemento de la colección de **productos** de acuerdo al ID que se le pase por parámetro. Si no encuentra productos con dicho ID, devuelve un mensaje de recurso no encontrado.
 
@@ -105,7 +113,19 @@ Recupera **un** elemento de la colección de **productos** de acuerdo al ID que 
 > 200 Response
 
 ```json
-{}
+{
+    "price": 45000,
+    "name": "Media punta infantil",
+    "stock": 12,
+    "active": true
+}
+```
+> 404 Response
+
+```json
+{
+  {"message": "Producto no encontrado"}
+}
 ```
 
 ### Responses
@@ -113,12 +133,13 @@ Recupera **un** elemento de la colección de **productos** de acuerdo al ID que 
 |HTTP Status Code |Meaning|Description|Data schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|Inline|
+|404|[NOT_FOUND](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|Inline|
 
-### Responses Data Schema
+<br>
 
-## DELETE Delete Product
+## Delete Product
 
-DELETE /api/products/4MUFAlaPqXaBpNHYouBp
+DELETE http://localhost:5000/api/products/:id
 
 Elimina un elemento de la colección de **productos** de acuerdo al ID que se le pase por parámetro. Si no encuentra productos con dicho ID, devuelve un mensaje de recurso no encontrado.
 
@@ -127,7 +148,16 @@ Elimina un elemento de la colección de **productos** de acuerdo al ID que se le
 > 200 Response
 
 ```json
-{}
+{
+  {"message": "Producto eliminado"}
+}
+```
+> 404 Response
+
+```json
+{
+  {"message": "Producto no encontrado"}
+}
 ```
 
 ### Responses
@@ -135,12 +165,16 @@ Elimina un elemento de la colección de **productos** de acuerdo al ID que se le
 |HTTP Status Code |Meaning|Description|Data schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|Inline|
+|404|[NOT_FOUND](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|Inline|
 
-### Responses Data Schema
+<br>
+<br>
 
-## GET Get All Users
+# Usuarios
 
-GET /api/users
+## Get All Users
+
+GET http://localhost:5000/api/users
 
 Recupera **todos** los elementos de la colección de **usuarios**.
 
@@ -149,7 +183,32 @@ Recupera **todos** los elementos de la colección de **usuarios**.
 > 200 Response
 
 ```json
-{}
+[
+    {
+        "id": "YmJu6sK0x7jV5yetHgJG",
+        "email": "saucem@gmail.com",
+        "role": "user",
+        "name": "Mauro Saucedo"
+    },
+    {
+        "id": "Zb0H2lzbjCHLTmpzxHCu",
+        "name": "Pedro Álvarez",
+        "email": "palvarez@gmail.com",
+        "role": "admin"
+    },
+    {
+        "id": "uhJOaidb9gXJYHzg0tTJ",
+        "role": "user",
+        "name": "Ernesto Molina",
+        "email": "emolina@gmail.com"
+    },
+    {
+        "id": "zqTdcRNpBQtSChSxfo3Q",
+        "email": "abelloso@gmail.com",
+        "role": "admin",
+        "name": "Ana Belloso"
+    }
+]
 ```
 
 ### Responses
@@ -158,11 +217,11 @@ Recupera **todos** los elementos de la colección de **usuarios**.
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|Inline|
 
-### Responses Data Schema
+<br>
 
-## POST Create User
+## Create User
 
-POST /api/users
+POST http://localhost:5000/api/users
 
 Crea un nuevo elemento en la colección de **usuarios** con la información provista en formato **JSON** de acuerdo a la estructura indicada debajo.
 
@@ -187,7 +246,7 @@ Crea un nuevo elemento en la colección de **usuarios** con la información prov
 
 > Response Examples
 
-> 200 Response
+> 201 Response
 
 ```json
 {}
@@ -197,13 +256,13 @@ Crea un nuevo elemento en la colección de **usuarios** con la información prov
 
 |HTTP Status Code |Meaning|Description|Data schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|Inline|
+|201|[CREATED](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|Inline|
 
-### Responses Data Schema
+<br>
 
-## GET Get User by ID
+## Get User by ID
 
-GET /api/users/Zb0H2lzbjCHLTmpzxHCu
+GET http://localhost:5000/api/users/Zb0H2lzbjCHLTmpzxHCu
 
 Recupera **un** elemento de la colección de **usuarios** de acuerdo al ID que se le pase por parámetro. Si no encuentra productos con dicho ID, devuelve un mensaje de recurso no encontrado.
 
@@ -212,7 +271,11 @@ Recupera **un** elemento de la colección de **usuarios** de acuerdo al ID que s
 > 200 Response
 
 ```json
-{}
+{
+    "name": "Pedro Álvarez",
+    "email": "palvarez@gmail.com",
+    "role": "admin"
+}
 ```
 
 ### Responses
@@ -220,12 +283,13 @@ Recupera **un** elemento de la colección de **usuarios** de acuerdo al ID que s
 |HTTP Status Code |Meaning|Description|Data schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|Inline|
+|404|[NOT_FOUND](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|Inline|
 
-### Responses Data Schema
+<br>
 
 ## DELETE Delete User
 
-DELETE /api/users/zqTdcRNpBQtSChSxfo3Q
+DELETE http://localhost:5000/api/users/:id
 
 Elimina un elemento de la colección de **usuarios** de acuerdo al ID que se le pase por parámetro. Si no encuentra productos con dicho ID, devuelve un mensaje de recurso no encontrado.
 
@@ -234,16 +298,20 @@ Elimina un elemento de la colección de **usuarios** de acuerdo al ID que se le 
 > 200 Response
 
 ```json
-{}
+{
+  {"message": "Usuario eliminado"}
+}
 ```
+> 404 Response
 
+```json
+{
+  {"message": "Usuario no encontrado"}
+}
+```
 ### Responses
 
 |HTTP Status Code |Meaning|Description|Data schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|Inline|
-
-### Responses Data Schema
-
-# Data Schema
-
+|404|[NOT_FOUND](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|Inline|
