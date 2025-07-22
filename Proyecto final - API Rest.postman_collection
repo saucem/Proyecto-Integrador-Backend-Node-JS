@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "e13cb593-a106-40a6-8f56-ad8ff0a6033d",
+		"name": "Proyecto final: API Rest",
+		"description": "Conjunto de peticiones que conforman el modo de acceder a la información de la base de datos a través de la API propuesta.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "45819472"
+	},
+	"item": [
+		{
+			"name": "Get All Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{local_host}}/api/products",
+				"description": "Recupera **todos** los elementos de la colección de **productos**."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{local_host}}/api/products/857CPidjDVoPvl16rvcR",
+				"description": "Recupera **un** elemento de la colección de **productos** de acuerdo al ID que se le pase por parámetro. Si no encuentra productos con dicho ID, devuelve un mensaje de recurso no encontrado."
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pollerín de ensayo\",\r\n    \"price\": 38500,\r\n    \"stock\": 28,\r\n    \"active\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{local_host}}/api/products",
+				"description": "Crea un nuevo elemento en la colección de **productos** con la información provista en formato **JSON** de acuerdo a la estructura indicada debajo."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "{{local_host}}/api/products/4MUFAlaPqXaBpNHYouBp",
+				"description": "Elimina un elemento de la colección de **productos** de acuerdo al ID que se le pase por parámetro. Si no encuentra productos con dicho ID, devuelve un mensaje de recurso no encontrado."
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{baseURL}}/api/users",
+				"description": "Recupera **todos** los elementos de la colección de **usuarios**."
+			},
+			"response": []
+		},
+		{
+			"name": "Get User by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{baseURL}}/api/users/Zb0H2lzbjCHLTmpzxHCu",
+				"description": "Recupera **un** elemento de la colección de **usuarios** de acuerdo al ID que se le pase por parámetro. Si no encuentra productos con dicho ID, devuelve un mensaje de recurso no encontrado."
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Ana Belloso\",\r\n    \"email\": \"abelloso@gmail.com\",\r\n    \"role\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseURL}}/api/users",
+				"description": "Crea un nuevo elemento en la colección de **usuarios** con la información provista en formato **JSON** de acuerdo a la estructura indicada debajo."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "{{baseURL}}/api/users/zqTdcRNpBQtSChSxfo3Q",
+				"description": "Elimina un elemento de la colección de **usuarios** de acuerdo al ID que se le pase por parámetro. Si no encuentra productos con dicho ID, devuelve un mensaje de recurso no encontrado."
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:5000",
+			"type": "default"
+		}
+	]
+}
